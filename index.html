@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>EggCatch</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sniglet:wght@400;800&display=swap" rel="stylesheet">
+    <script src="script.js"></script>
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            background: #ffffff;
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .header, .footer {
+            width: 600px;
+            height: 200px;
+            background: #b9e47d;
+            color: white;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            font-size: 20px;
+            font-family: 'Sniglet', cursive;
+        }
+
+        /* 真ん中 */
+        main {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        canvas {
+            background: black;
+            display: block;
+        }
+
+        #score, .footer span {
+            font-size: 30px;
+            color: white;
+            text-shadow:1.5px 1.5px 0 #000, -1.5px -1.5px 0 #000,
+              -1.5px 1.5px 0 #000, 1.5px -1.5px 0 #000,
+              0px 1.5px 0 #000,  0 -1.5px 0 #000,
+              -1.5px 0 0 #000, 1.5px 0 0 #000;
+        }
+
+        img {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <span id="score"></span>
+    </div>
+    <main>
+        <canvas id="field" width="600" height="600"></canvas>
+        <img id="basket" src="basket.png">
+        <img id="chick" src="chick.png">
+        <img id="egg1" src="egg1.png">
+        <img id="egg2" src="egg2.png">
+        <img id="back" src="back.png">
+    </main>
+    <div class="footer">
+        <span>EggCatch</span>
+    </div>
+</body>
+</html>
