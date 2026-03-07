@@ -46,6 +46,9 @@ onload = function() {
     window.onmousemove = (e) => {
         basketX = e.offsetX;
     };
+    window.ontouchmove = (e) => {
+        basketX = e.touches[0].offsetX;
+    }
 };
 
 function tick() {
