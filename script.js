@@ -43,10 +43,11 @@ onload = function() {
     div2.style.width = canvasSize + "px";
 
     timerId = setInterval(tick, 50);
-    window.onmousemove = (e) => {
+    canvas.onmousemove = (e) => {
         basketX = e.offsetX;
     };
-    window.ontouchmove = (e) => {
+
+    canvas.ontouchmove = (e) => {
         basketX = e.touches[0].offsetX;
     }
 };
@@ -70,19 +71,20 @@ function tick() {
 
     ctx.fillStyle = "green";
     scoreDisplay.textContent = "Score: " + score;
-    eggs.forEach((e) => {
-        e.y += e.y * 0.05 + 1;
-        if (e.y < 50) {
-            ctx.drawImage(chick, e.x, 10);
-        } else {
-            ctx.drawImage(egg1, e.x, e.y);
-        }
 
-        if (e.y > (canvasSize - 50)) {
-            clearInterval(timerId);
-            ctx.font = "calc(" + canvasSize * (3 / 20) + "px) 'sniglet', 'Roboto', 'Arial', sans-serif";
-            ctx.fillText("Game Over", (canvasSize * (2 / 15)), canvasSize / 2);
-            ctx.drawImage(egg2, e.x, canvasSize - 100);
-        }
-    });
+    // eggs.forEach((e) => {
+    //     e.y += e.y * 0.05 + 1;
+    //     if (e.y < 50) {
+    //         ctx.drawImage(chick, e.x, 10);
+    //     } else {
+    //         ctx.drawImage(egg1, e.x, e.y);
+    //     }
+
+    //     if (e.y > (canvasSize - 50)) {
+    //         clearInterval(timerId);
+    //         ctx.font = "calc(" + canvasSize * (3 / 20) + "px) 'sniglet', 'Roboto', 'Arial', sans-serif";
+    //         ctx.fillText("Game Over", (canvasSize * (2 / 15)), canvasSize / 2);
+    //         ctx.drawImage(egg2, e.x, canvasSize - 100);
+    //     }
+    // });
 }
