@@ -54,14 +54,14 @@ onload = function() {
 
 function tick() {
     ctx.drawImage(back, 0, 0);
-    ctx.drawImage(basket, basketX - 50, canvasSize - 100);
+    ctx.drawImage(basket, basketX - 60, canvasSize - 100);
     if (Math.random() > prob) {
         eggs.push({x: Math.random() * (canvasSize - 100), y: 1});
     }
     let prev = eggs.length;
     eggs = eggs.filter((e) => {
         return (
-            e.y < (canvasSize - 200) || e.y > canvasSize || e.x < basketX - 50 || e.x > basketX + 50
+            e.y < (canvasSize - 200) || e.y > canvasSize || e.x < basketX - 60 || e.x > basketX + 60
         );
     });
     if (prev != eggs.length) {
